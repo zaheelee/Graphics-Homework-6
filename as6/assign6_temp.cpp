@@ -5,14 +5,31 @@ Template for Assignment 6-Local Illumination and Shading
 
 */
 
+#ifdef WIN32
+#include <windows.h>
+#endif
+
+#define _USE_MATH_DEFINES
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <iostream>
 #include <math.h>
-
+#include <iostream>
+#include <fstream>
 #include <string.h>
+
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#else
 #include <GL/glut.h>
-#include <windows.h>
+#include <GL/glu.h>
+#include <GL/gl.h>
+#endif
+
+
+
 #include "glprocs.h"
 
 

@@ -1,5 +1,8 @@
-#ifndef _GLPROCS_H_
-#define _GLPROCS_H_
+//#ifndef _APPLE_
+    #ifndef _GLPROCS_H_
+    #define _GLPROCS_H_
+    //#endif
+//#endif
 
 /*
 ** GLprocs utility for getting function addresses for OpenGL(R) 1.2, 
@@ -40,9 +43,13 @@
 #ifdef _WIN32
   #include "glext.h"
   #include "wglext.h"
-#else
-  #include <GL/glext.h>
-#endif
+//#else
+    //#ifdef __APPLE__
+        //#include <OpenGL/glext.h>
+    #else
+        #include <GL/glext.h>
+    #endif
+//#endif
 
 #ifndef _WIN32 /* non-Windows environment */
   #ifndef APIENTRY
